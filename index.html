@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5797bc">
+  <title>TabiPlan — Osaka Trip Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <div class="phone">
+    <div class="status"><span>9:41</span><span>● ◔ ▰</span></div>
+
+    <header class="header">
+      <div class="brand"><span><b>Tabi</b>Plan</span><span class="person">♟</span></div>
+      <nav class="tabs">
+        <button class="tab active" data-view="schedule">SCHEDULE</button>
+        <button class="tab" data-view="hotel">HOTEL</button>
+        <button class="tab" data-view="food">FOOD</button>
+        <button class="tab" data-view="budget">BUDGET</button>
+        <button class="tab" data-view="notes">NOTES</button>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section id="schedule" class="view active">
+        <div class="date">Wednesday, Oct 2</div>
+        <div class="card timeline">
+          <div class="event"><div class="time">10:00<br><strong>AM</strong></div><div class="dot">✈</div><div><div class="sub">10:00 AM</div><div class="event-title">Arrive KIX, Osaka</div></div></div>
+          <div class="event"><div class="time">1:00<br><strong>PM</strong></div><div class="dot green">♜</div><div><div class="sub">1:00 PM</div><div class="event-title">Osaka Castle Tour</div></div></div>
+          <div class="event"><div class="time">7:00<br><strong>PM</strong></div><div class="dot orange">🍴</div><div><div class="sub">7:00 PM</div><div class="event-title">Dinner: Dotonbori Gyoza</div></div></div>
+          <button class="btn" id="addActivity">ADD ACTIVITY</button>
+        </div>
+        <div id="extraActivities"></div>
+      </section>
+
+      <section id="hotel" class="view">
+        <h1>Osaka Hotels</h1>
+        <div class="card">
+          <div class="hotel-photo"><span>▰</span></div>
+          <div class="hotel-title">The Ritz-Carlton, Osaka</div>
+          <div class="meta">🛏 2 nights (Oct 2 - Oct 4)</div>
+          <div class="meta">◷ Check-in: 3 PM</div>
+          <div class="meta">📍 Map Link</div>
+          <button class="btn" id="hotelDetails">VIEW DETAILS</button>
+        </div>
+      </section>
+
+      <section id="food" class="view">
+        <h1>Osaka Food Recommendations</h1>
+        <div class="grid">
+          <article class="card small-card"><div class="food-img takoyaki"></div><div class="food-info"><b>Takoyaki (Gindaco)</b><div class="stars">★ 4.5</div></div></article>
+          <article class="card small-card"><div class="food-img ramen"></div><div class="food-info"><b>Ichiran Ramen (Classic)</b><div class="stars">★ 4.8</div></div></article>
+          <article class="card small-card"><div class="food-img gyoza"></div><div class="food-info"><b>Gyoza at Chao Chao</b><div class="stars">★ 4.6</div></div></article>
+        </div>
+      </section>
+
+      <section id="budget" class="view">
+        <div class="card">
+          <h1>Osaka Trip Budget</h1>
+          <div class="budget-head">
+            <div><div class="donut"></div><div class="spent">Total Spent: ¥145,000 / ¥200,000</div></div>
+            <div class="legend">
+              <div><i class="l1"></i>Transport 35%</div>
+              <div><i class="l2"></i>Accommodation 35%</div>
+              <div><i class="l3"></i>Food 20%</div>
+              <div><i class="l4"></i>Activities 10%</div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="expenseCard">
+          <div id="expenseList">
+            <div class="money"><strong>¥75,000</strong><span>Accommodation</span></div>
+            <div class="money"><strong>¥40,000</strong><span>Transport</span></div>
+            <div class="money"><strong>¥30,000</strong><span>Food</span></div>
+            <div class="money"><strong>¥15,000</strong><span>Activities</span></div>
+          </div>
+          <button class="btn" id="addExpense">ADD EXPENSE</button>
+        </div>
+      </section>
+
+      <section id="notes" class="view">
+        <div class="card">
+          <h1>Trip Notes</h1>
+          <label class="check"><input type="checkbox" checked> Pack adapters</label>
+          <label class="check"><input type="checkbox" checked> Check-in times</label>
+          <label class="check"><input type="checkbox"> Osaka Pass?</label>
+          <label class="check"><input type="checkbox"> Camera Batteries</label>
+          <label class="check"><input type="checkbox" checked> Print tickets</label>
+          <div id="notesList">
+            <div class="note"><b>Ramen place to check...</b></div>
+            <div class="note"><b>Store names...</b></div>
+          </div>
+          <button class="btn" id="addNote">ADD NOTE</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottom">
+      <button><span>⌂</span>Home</button>
+      <button><span>⌕</span>Explore</button>
+      <button class="selected"><span>▣</span>Plan</button>
+      <button><span>▢</span>Book</button>
+      <button><span>●</span>Profile</button>
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="sheet">
+    <h2 id="modalTitle">Add</h2>
+    <input id="modalInput" placeholder="Enter a name">
+    <div class="sheet-actions">
+      <button class="btn cancel" id="cancel">Cancel</button>
+      <button class="btn" id="save">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
